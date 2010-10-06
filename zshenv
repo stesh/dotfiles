@@ -4,7 +4,7 @@ setopt extended_glob
 
 export PAGER="/usr/bin/env less"
 export EDITOR="/usr/bin/env vim"
-export PATH=$PATH:~/bin
+export PATH=$PATH:~/bin:/opt/local/bin
 
 # Options for less
 export LESSCHARSET=utf-8
