@@ -44,16 +44,6 @@ alias ping="ping -c 4" # Four is enough for anyone
 alias top="nice top" # Don't hog my resources pls
 alias newtex="~/bin/newtex"
 
-# SSH Shortcuts
-alias d="ssh -L 8080:127.0.0.1:8080 stesh@server.stephen-shaw.net"
-alias b="ssh -i ~/.ssh/shawbox  -L 5480:127.0.0.1:548 stesh@shawbox.stephen-shaw.net" # Forward AFP
-alias cs="ssh -i ~/.ssh/macneill shawsd@macneill.cs.tcd.ie"
-alias nexus="ssh -i ~/.ssh/nexus stesh@ducss.cs.tcd.ie"
-alias spoon="ssh -i ~/.ssh/spoon -L 8000:localhost:8000 stesh@spoon.netsoc.tcd.ie"
-alias matrix="ssh -i ~/.ssh/matrix stesh@matrix.netsoc.tcd.ie"
-alias cube="ssh -i ~/.ssh/cube stesh@cube.netsoc.tcd.ie"
-alias titanic="ssh -i ~/.ssh/titanic stesh@titanic.netsoc.tcd.ie"
-
 export PATH=$PATH:~/bin
 
 # OS X-specific things

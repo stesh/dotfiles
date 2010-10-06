@@ -8,7 +8,7 @@ endif
 
 if has('gui_running')
     set mousehide
-    set guifont=Menlo
+    set guifont=Inconsolata
     colors evening
     set guioptions-=T
 else
@@ -38,6 +38,7 @@ set shiftwidth=4
 set shiftround
 set dictionary=/usr/share/dict/words
 set complete+=k
+set omnifunc
 
 """
 " Folding
@@ -55,3 +56,13 @@ set foldcolumn=12
 set foldtext=KandRFolding()
 
 filetype indent on
+
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType c set omnifunc=ccomplete#Complete
+autocmd FileType cpp set omnifunc=cppcomplete#Complete
+autocmd FileType perl set omnifunc=perlcomplete#Complete
