@@ -36,7 +36,7 @@ local NOCOLOR="%{"$'\e[0m'"%}"
 # Altered commands
 alias nano="vim" # Wean off nano 
 alias nmap="nmap -A" # Digs deeper
-alias s="screen -U -dR"
+alias s="screen -ax"
 alias screen="TERM=screen screen"
 alias grep="grep --color" # Highlighting in grep
 alias mkdir="mkdir -p"
