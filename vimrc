@@ -66,3 +66,9 @@ filetype indent on
 "autocmd FileType c set omnifunc=ccomplete#Complete
 "autocmd FileType cpp set omnifunc=cppcomplete#Complete
 "autocmd FileType perl set omnifunc=perlcomplete#Complete
+"
+
+autocmd FileType java let b:jcommenter_class_author='Stephen Shaw <shawsd@tcd.ie>' 
+autocmd FileType java let b:jcommenter_file_author='Stephen Shaw <shawsd@tcd.ie>' 
+autocmd FileType java source ~/.vim/plugin/jcommenter.vim 
+autocmd FileType java map <C-S-c> :call JCommentWriter()<CR> 
