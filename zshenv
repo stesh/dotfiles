@@ -1,9 +1,5 @@
-setopt correct # Turn on spelling correction 
-setopt correctall
-setopt extended_glob
-
 export PAGER="/usr/bin/env less"
-export EDITOR="/usr/bin/env vim"
+export EDITOR="/usr/bin/vim"
 export PATH=$PATH:~/bin:/opt/local/bin
 
 # Options for less
