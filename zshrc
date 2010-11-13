@@ -17,13 +17,17 @@ zstyle :compinstall filename "$HOME/dotfiles/zshrc"
 autoload -Uz compinit
 compinit
 
-HISTFILE=~/.history
-HISTSIZE=1000
-SAVEHIST=1000
+if echo `hostname` | egrep "*.s?css?.tcd.ie" > /dev/null; then
 
-setopt HIST_REDUCE_BLANKS
+else
+    HISTFILE=~/.history
+    HISTSIZE=1000
+    SAVEHIST=1000
+    setopt HIST_REDUCE_BLANKS
+    setopt appendhistory
+fi
+
 setopt nohup
-setopt appendhistory
 setopt autocd
 setopt extendedglob
 setopt cdablevars
@@ -36,7 +40,10 @@ setopt SH_WORD_SPLIT
 setopt notify
 setopt correct
 setopt correctall
+
 bindkey -v
+bindkey '\e[3~' delete-char
+bindkey '^R' history-incremental-search-backward
 
 PROMPT="${white}%n@${GRAY}%m%1 ${white}:${blue}%~${white}$ ${NOCOLOR}"
 
