@@ -37,6 +37,7 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set shiftround
 set dictionary=/usr/share/dict/words
+set spell
 set complete+=k
 " set omnifunc
 

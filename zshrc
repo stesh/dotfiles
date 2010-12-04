@@ -32,7 +32,7 @@ setopt autocd
 setopt extendedglob
 setopt cdablevars
 setopt ignoreeof
-setopt noclobber
+#setopt noclobber
 setopt interactivecomments
 setopt nobanghist
 setopt nomatch
