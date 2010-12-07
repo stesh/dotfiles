@@ -24,7 +24,6 @@ set autoindent smartindent
 set formatoptions+=r
 set textwidth=80
 set showmatch
-set vb t_vb=
 set ttyfast
 set number 
 set ruler
@@ -39,6 +38,15 @@ set shiftround
 set dictionary=/usr/share/dict/words
 set spell
 set complete+=k
+set wildmenu
+set hlsearch
+set magic
+set noerrorbells
+set novisualbell
+set wrap
+set t_vb=
+set tm=500
+
 " set omnifunc
 
 """
@@ -58,18 +66,13 @@ set foldtext=KandRFolding()
 
 filetype indent on
 
-"autocmd FileType python set omnifunc=pythoncomplete#Complete
-"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-"autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-"autocmd FileType c set omnifunc=ccomplete#Complete
-"autocmd FileType cpp set omnifunc=cppcomplete#Complete
-"autocmd FileType perl set omnifunc=perlcomplete#Complete
-"
+set ofu=syntaxcomplete#Complete
 
+au FileType python syn keyword pythonDecorator True None False self
 autocmd FileType java let b:jcommenter_class_author='Stephen Shaw <shawsd@tcd.ie>' 
 autocmd FileType java let b:jcommenter_file_author='Stephen Shaw <shawsd@tcd.ie>' 
 autocmd FileType java source ~/.vim/plugin/jcommenter.vim 
 autocmd FileType java map <C-S-c> :call JCommentWriter()<CR> 
+
+set statusline=
+set statusline=[%n]\ %F%<\ %m%r%h%w%y[%{&ff}]%=0x%B\ @\ %c%V,\ %l\ /\ %L\ %P

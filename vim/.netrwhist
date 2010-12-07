@@ -1,10 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/Users/stesh/srv/cube/.links2'
-let g:netrw_dirhist_2='/Users/stesh/bin'
-let g:netrw_dirhist_3='/Users/stesh/CSLL/macgreevy'
-let g:netrw_dirhist_4='/Users/stesh/CSLL/macgreevy/test'
-let g:netrw_dirhist_5='/Users/stesh/.vim'
-let g:netrw_dirhist_6='/Users/stesh/CSLL/Java/Code/src/org/shawsd/cs2011/practice/stack/Main.java'
-let g:netrw_dirhist_7='/Users/stesh/bin/mount-shares'
-let g:netrw_dirhist_8='/Users/stesh/bin/XFST'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/Users/stesh/CSLL/French/Assignments/Week 11/Translation'
