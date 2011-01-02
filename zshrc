@@ -26,7 +26,7 @@ setopt cdablevars
 setopt ignoreeof
 #setopt noclobber
 setopt interactivecomments
-setopt nobanghist
+setopt BANG_HIST
 setopt nomatch
 setopt SH_WORD_SPLIT
 setopt notify
@@ -37,14 +37,13 @@ bindkey -v
 bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
 
-alias nano="vim" # Wean off nano 
-alias nmap="nmap -A" # Digs deeper
+alias nano="vim" 
+alias nmap="nmap -A" 
 alias s="screen -ax"
 alias screen="TERM=screen screen"
 alias grep="grep --color" # Highlighting in grep
 alias mkdir="mkdir -p"
-alias ping="ping -c 4" # Four is enough for anyone
-alias top="nice top" # Don't hog my resources pls
+alias ping="ping -c 4" 
 alias newtex="~/bin/newtex"
 
 case $TERM in
