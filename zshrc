@@ -39,7 +39,7 @@ bindkey '^R' history-incremental-search-backward
 
 alias nano="vim" 
 alias nmap="nmap -A" 
-alias s="screen -ax"
+alias s="screen -adr"
 alias screen="TERM=screen screen"
 alias grep="grep --color" # Highlighting in grep
 alias mkdir="mkdir -p"
