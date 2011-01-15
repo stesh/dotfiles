@@ -32,9 +32,7 @@ set mouse=a
 set ignorecase
 set smartcase
 set expandtab
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set shiftround
+set tabstop=4 softtabstop=4 shiftwidth=4 shiftround
 set dictionary=/usr/share/dict/words
 set spell
 set complete+=k
@@ -69,10 +67,13 @@ filetype indent on
 set ofu=syntaxcomplete#Complete
 
 au FileType python syn keyword pythonDecorator True None False self
-autocmd FileType java let b:jcommenter_class_author='Stephen Shaw <shawsd@tcd.ie>' 
-autocmd FileType java let b:jcommenter_file_author='Stephen Shaw <shawsd@tcd.ie>' 
-autocmd FileType java source ~/.vim/plugin/jcommenter.vim 
-autocmd FileType java map <C-S-c> :call JCommentWriter()<CR> 
+
+au FileType ruby set tabstop=2 softtabstop=2 shiftwidth=2 shiftround
+
+au FileType java let b:jcommenter_class_author='Stephen Shaw <shawsd@tcd.ie>' 
+au FileType java let b:jcommenter_file_author='Stephen Shaw <shawsd@tcd.ie>' 
+au FileType java source ~/.vim/plugin/jcommenter.vim 
+au FileType java map <C-S-c> :call JCommentWriter()<CR> 
 
 set statusline=
 set statusline=[%n]\ %F%<\ %m%r%h%w%y[%{&ff}]%=0x%B\ @\ %c%V,\ %l\ /\ %L\ %P
