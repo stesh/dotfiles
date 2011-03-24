@@ -110,7 +110,7 @@ else
 fi
 
 
-PROMPT="${white}%n@${hostColour}%m%1 ${white}:${blue}%~ ${NOCOLOR}[${GREEN}%T${NOCOLOR}]${white}%# ${NOCOLOR}"
+PROMPT="${NOCOLOR}[${GREEN}%T${NOCOLOR}] ${white}%n@${hostColour}%m%1 ${white}:${blue}%~${white} %# ${NOCOLOR}"
 
 if [[ -e "$HOME/.zshrc.local" ]]; then 
 	source "$HOME/.zshrc.local"
