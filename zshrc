@@ -19,7 +19,6 @@ zstyle :compinstall filename "$HOME/dotfiles/zshrc"
 autoload -Uz compinit
 compinit
 
-setopt nohup
 setopt autocd
 setopt extendedglob
 setopt cdablevars
