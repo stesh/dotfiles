@@ -43,6 +43,8 @@ alias grep="grep --color" # Highlighting in grep
 alias mkdir="mkdir -p"
 alias ping="ping -c 4" 
 alias newtex="~/bin/newtex"
+alias csc="mono-csc"
+
 
 case $TERM in
 	xterm*|rxvt|(K|a)term)
