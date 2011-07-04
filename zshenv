@@ -1,6 +1,7 @@
 export PAGER="/usr/bin/env less"
 export EDITOR="/usr/bin/vim"
 export PATH=$PATH:~/bin:/opt/local/bin
+export TERM=xterm-256color
 
 # Options for less
 export LESSCHARSET=utf-8
