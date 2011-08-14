@@ -85,19 +85,8 @@ local green="%{"$'\e[1;32m'"%}"
 local GREEN="%{"$'\e[0;32m'"%}"
 local white="%{"$'\e[1;37m'"%}"
 local NOCOLOR="%{"$'\e[0m'"%}"
-
-
-if echo $hostname | egrep "*.s?css?.tcd.ie" > /dev/null; then
-    local hostColour=${red}
-elif echo $hostname | egrep "*netsoc.tcd.ie" > /dev/null; then
-    local hostColour=${green}
-elif echo $hostname | egrep "*ducss.ie" > /dev/null; then
-    local hostColour=${blue}
-elif echo $hostname | egrep "*stephen-shaw.net" > /dev/null; then
-    local hostColour=${cyan}
-else
-    local hostColour=${gray}
-fi
+local cyan="%{"$'\e[1;36m'"%}"
+local hostColour=${cyan}
 
 if echo hostname | egrep "*.s?css?.tcd.ie" > /dev/null; then
 
@@ -111,7 +100,7 @@ fi
 
 
 #PROMPT="${NOCOLOR}[${GREEN}%T${NOCOLOR}] ${white}%n@${hostColour}%m%1 ${white}:${blue}%~${white} %# ${NOCOLOR}"
-PROMPT="${NOCOLOR}[${GREEN}%T${NOCOLOR}] ${hostColour}%M%1 ${white}:${blue}%~${white} %# ${NOCOLOR}"
+PROMPT="${NOCOLOR}[${GREEN}%T${NOCOLOR}] ${hostColour}%M%1 ${white}:${blue}%~${NOCOLOR} %n${white}%# ${NOCOLOR}"
 
 if [[ -e "$HOME/.zshrc.local" ]]; then 
 	source "$HOME/.zshrc.local"
