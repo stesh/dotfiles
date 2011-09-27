@@ -34,10 +34,8 @@ set smartcase
 set expandtab
 set tabstop=4 softtabstop=4 shiftwidth=4 shiftround
 set dictionary=/usr/share/dict/words
-set spell
 set complete+=k
 set wildmenu
-set hlsearch
 set magic
 set noerrorbells
 set novisualbell
