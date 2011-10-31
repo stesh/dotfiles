@@ -105,4 +105,4 @@ RPS1="${NOCOLOR}[${GREEN}%T${NOCOLOR}]"
 
 [ -e "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
 
-[ -d "$HOME/.zsh-syntax-highlighting" ] && source "$HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh";
+[ ! -f "$HOME/.nosyntax" ] && [ -d "$HOME/.zsh-syntax-highlighting" ] && source "$HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh";
