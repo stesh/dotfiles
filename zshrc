@@ -103,6 +103,6 @@ fi
 PROMPT="${hostColour}%m%1 ${white}:${blue}%~${NOCOLOR} %n${white}%# ${NOCOLOR}"
 RPS1="${NOCOLOR}[${GREEN}%T${NOCOLOR}]"
 
-if [[ -e "$HOME/.zshrc.local" ]]; then 
-	source "$HOME/.zshrc.local"
-fi
+[ -e "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
+
+[ -d "$HOME/.zsh-syntax-highlighting" ] && source "$HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh";
