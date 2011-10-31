@@ -25,12 +25,12 @@ zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*'
 zstyle ':completion:*' squeeze-slashes true
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*' force-list always
-zstyle ':completion:*' format '%B%d%b'
+zstyle ':completion:*' format "$green%B---- %d ----%b"
 zstyle ':completion:*:descriptions'    format $'%{\e[0;31m%}searching for %B%d%b%{\e[0m%}'
 zstyle ':completion:*:messages' format '%B%U%d%u%b'
 zstyle ':completion:*:warnings' format "%B$red%}no match for $white%d%b"
 zstyle ':completion:*' group-name '' 
-zstyle ':completion:*' menu select 
+zstyle ':completion:*' menu yes select
 
 zstyle :compinstall filename "$HOME/dotfiles/zshrc"
 
