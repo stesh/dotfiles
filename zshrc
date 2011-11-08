@@ -107,8 +107,14 @@ else
 fi
 
 
-#PROMPT="${NOCOLOR}[${GREEN}%T${NOCOLOR}] ${white}%n@${hostColour}%m%1 ${white}:${blue}%~${white} %# ${NOCOLOR}"
-PROMPT="${hostColour}%m%1 ${white}:${blue}%~${NOCOLOR} %n${white}%# ${NOCOLOR}"
+if [ $UID = 0 ]; then
+    PRIV="#"
+else
+    PRIV="$"
+fi
+
+
+PROMPT="${hostColour}%m%1 ${white}:${blue}%~${NOCOLOR} %n${white}$PRIV ${NOCOLOR}"
 RPS1="${NOCOLOR}[${GREEN}%T${NOCOLOR}]"
 
 [ -e "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
