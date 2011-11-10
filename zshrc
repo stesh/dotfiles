@@ -40,8 +40,6 @@ compinit
 setopt autocd
 setopt extendedglob
 setopt cdablevars
-setopt ignoreeof
-#setopt noclobber
 setopt interactivecomments
 setopt BANG_HIST
 setopt nomatch
