@@ -86,7 +86,7 @@ case $(uname) in
     'Linux')
         alias ls='ls --color -F'
         alias Vim='vim -g' # GVim
-        local hostname=$(hostname --log)
+        local hostname=$(hostname --long)
     ;;
 esac
 
