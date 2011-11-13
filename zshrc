@@ -1,6 +1,6 @@
 # STESH - .zshrc
 
-[[ -z "$PS1" ]] && return # Don't bother if it's not an interactive shell
+[ -z "$PS1" ] && return # Don't bother if it's not an interactive shell
 
 cd
 
@@ -53,68 +53,63 @@ bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
 
 alias nano="vim" 
-alias nmap="nmap -A" 
 alias screen="TERM=screen screen"
 alias grep="grep --color" # Highlighting in grep
 alias mkdir="mkdir -p"
-alias ping="ping -c 4" 
 alias newtex="~/bin/newtex"
 alias csc="mono-csc"
 
 
 case $TERM in
 	xterm*|rxvt|(K|a)term)
-	precmd () {
-		print -Pn "\033]0;%n@%m:%~\a" 
+	precmd() {
+		print -Pn "\033]0;%m:%~ %n\a" 
 	}
-	preexec () {
-		print -Pn "\033]0;%n@%m:%~\a" 
+	preexec() {
+		print -Pn "\033]0;%m:%~ %n\a" 
 	}
 	;;
 esac
 
-if [[ $( uname ) == Darwin ]]; then
-	if [[ "$TERM" != "dumb" ]]; then # make sure it isn't a dumb terminal
-		alias ls="ls -G" # Coloured ls
-	fi
-	export PATH="/opt/local/bin:$PATH"
-    #source /sw/bin/init.sh
-	alias fishow="defaults write com.apple.finder AppleShowAllFiles -bool true;killall Finder" #show hidden files in Finder
-	alias fihide="defaults write com.apple.finder AppleShowAllFiles -bool false;killall Finder" #hide them again
-	alias Vim="mvim"
-    local hostname=`hostname`
+# OS-specific
+case $(uname) in 
+    'Darwin') 
+        alias ls='ls -GF'
 
-elif [[ $( uname ) == Linux ]]; then
-	if [[ "$TERM" != "dumb" ]]; then
-		alias ls="ls --color" # Coloured ls
-        alias Vim="vim -g"
-        local hostname=`hostname --long`
-	fi
-fi
+        # See MacPorts, if it's installed
+        [ -d '/opt/local' ] && export PATH="/opt/local/bin:$PATH"
 
-local hostColour=${cyan}
+    	alias Vim='mvim' # MacVim
+        local hostname=$(hostname)
+    ;;
 
-if echo hostname | egrep "*.s?css?.tcd.ie" > /dev/null; then
+    'Linux')
+        alias ls='ls --color -F'
+        alias Vim='vim -g' # GVim
+        local hostname=$(hostname --log)
+    ;;
+esac
 
-else
-    HISTFILE=~/.history
+# no history on boxes I don't have root on
+$(hostname | egrep "*.s?css?.tcd.ie" > /dev/null) || (
+    HISTFILE='~/.history'
     HISTSIZE=1000
     SAVEHIST=1000
     setopt HIST_REDUCE_BLANKS
     setopt appendhistory
-fi
+)
 
+# sh-style privilege markers
+PRIV='$'
+[ $UID = 0 ] && PRIV='#'
 
-if [ $UID = 0 ]; then
-    PRIV="#"
-else
-    PRIV="$"
-fi
-
-
+# hostname:directory user<privilege marker> [time]
+local hostColour=${cyan}
 PROMPT="${hostColour}%m%1 ${white}:${blue}%~${NOCOLOR} %n${white}$PRIV ${NOCOLOR}"
 RPS1="${NOCOLOR}[${GREEN}%T${NOCOLOR}]"
 
-[ -e "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
 
 [ ! -f "$HOME/.nosyntax" -a -d "$HOME/.zsh-syntax-highlighting" ] && source "$HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" 
+
+# Machine-specific settings
+[ -e "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
