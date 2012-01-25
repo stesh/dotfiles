@@ -59,7 +59,6 @@ alias mkdir="mkdir -p"
 alias newtex="~/bin/newtex"
 alias csc="mono-csc"
 
-alias su="/usr/bin/su"
 alias sudo="/usr/bin/sudo"
 alias ssh="/usr/bin/ssh"
 
@@ -126,7 +125,7 @@ long_hostname() {
 
 
 local hostColour=${cyan}
-PROMPT="${hostColour}$(long_hostname)%1 ${white}:${blue}%~${NOCOLOR} %n${white}$PRIV ${NOCOLOR}"
+PROMPT="${hostColour}%m%1 ${white}:${blue}%~${NOCOLOR} %n${white}$PRIV ${NOCOLOR}"
 RPS1="${NOCOLOR}[${GREEN}%T${NOCOLOR}]"
 
 
