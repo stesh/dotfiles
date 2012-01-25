@@ -1,7 +1,12 @@
 export PAGER="/usr/bin/env less"
 export EDITOR="/usr/bin/vim"
-export PATH=$PATH:~/bin:/opt/local/bin
-export TERM=xterm-256color
+export PATH=~/bin:$PATH
+
+if [ -n "$TMUX" ]; then
+    export TERM=screen-256color
+else
+    export TERM=xterm-256color
+fi
 
 # Options for less
 export LESSCHARSET=utf-8

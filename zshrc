@@ -74,13 +74,19 @@ esac
 # OS-specific
 case $(uname) in 
     'Darwin') 
-        alias ls='ls -GF'
 
         # See MacPorts, if it's installed
         [ -d '/opt/local' ] && export PATH="/opt/local/bin:$PATH"
 
     	alias Vim='mvim' # MacVim
         local hostname=$(hostname)
+
+        # Use GNU ls instead of BSD ls, if it's installed
+        if [ -x '/opt/local/libexec/gnubin/ls' ]; then
+            alias ls='/opt/local/libexec/gnubin/ls --color -F'
+        else
+            alias ls ='/bin/ls -FG'
+        fi
     ;;
 
     'Linux')
@@ -104,8 +110,20 @@ PRIV='$'
 [ $UID = 0 ] && PRIV='#'
 
 # hostname:directory user<privilege marker> [time]
+
+
+long_hostname() {
+    case $(uname) in
+        'Darwin')
+            /bin/hostname ;;
+        'Linux')
+            /bin/hostname --long
+    esac
+}
+
+
 local hostColour=${cyan}
-PROMPT="${hostColour}%m%1 ${white}:${blue}%~${NOCOLOR} %n${white}$PRIV ${NOCOLOR}"
+PROMPT="${hostColour}$(long_hostname)%1 ${white}:${blue}%~${NOCOLOR} %n${white}$PRIV ${NOCOLOR}"
 RPS1="${NOCOLOR}[${GREEN}%T${NOCOLOR}]"
 
 
