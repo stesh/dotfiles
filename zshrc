@@ -54,11 +54,14 @@ bindkey '^R' history-incremental-search-backward
 
 alias nano="vim" 
 alias screen="TERM=screen screen"
-alias grep="grep --color" # Highlighting in grep
+alias grep="grep --color" 
 alias mkdir="mkdir -p"
 alias newtex="~/bin/newtex"
 alias csc="mono-csc"
 
+alias su="/usr/bin/su"
+alias sudo="/usr/bin/sudo"
+alias ssh="/usr/bin/ssh"
 
 case $TERM in
 	xterm*|rxvt|(K|a)term)
