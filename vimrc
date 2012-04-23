@@ -42,6 +42,7 @@ set novisualbell
 set wrap
 set t_vb=
 set tm=500
+set cm=blowfish
 
 " set omnifunc
 
