@@ -4,8 +4,6 @@
 
 cd
 
-export PATH=$PATH:~/bin
-
 local blue="%{"$'\e[1;34m'"%}"
 local cyan="%{"$'\e[1;36m'"%}"
 local red="%{"$'\e[1;31m'"%}"
@@ -51,6 +49,8 @@ setopt correctall
 bindkey -v
 bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
+
+umask a=rwx,g=x,o=x
 
 alias nano="vim" 
 alias screen="TERM=screen screen"
