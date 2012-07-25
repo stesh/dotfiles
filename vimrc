@@ -57,7 +57,7 @@ endfunction
 
 set foldmethod=indent
 set foldnestmax=10
-set foldlevel=0
+set foldlevel=12
 set foldcolumn=12
 set foldtext=KandRFolding()
 
