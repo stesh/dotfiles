@@ -98,8 +98,8 @@ case $(uname) in
     ;;
 esac
 
-# no history on boxes I don't have root on
-if [ -n $(hostname | grep -E "\*.s?css?.tcd.ie") ]; then
+# History on boxes only I have root on
+if [ -n $(hostname | grep -E "\*.tcd.ie") ]; then
     HISTFILE='~/.history'
     HISTSIZE=1000
     SAVEHIST=1000
