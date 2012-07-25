@@ -99,13 +99,13 @@ case $(uname) in
 esac
 
 # no history on boxes I don't have root on
-$(hostname | egrep "*.s?css?.tcd.ie" > /dev/null) || (
+if [ -n $(hostname | grep -E "\*.s?css?.tcd.ie") ]; then
     HISTFILE='~/.history'
     HISTSIZE=1000
     SAVEHIST=1000
     setopt HIST_REDUCE_BLANKS
     setopt appendhistory
-)
+fi
 
 # sh-style privilege markers
 PRIV='$'
