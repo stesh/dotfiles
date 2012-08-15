@@ -131,5 +131,9 @@ RPS1="${NOCOLOR}[${GREEN}%T${NOCOLOR}]"
 
 [ ! -f "$HOME/.nosyntax" -a -d "$HOME/.zsh-syntax-highlighting" ] && source "$HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" 
 
+horse_ebooks() {
+    wget -qO- http://horseebooksipsum.com/api/v1 | say -v Fiona
+}
+
 # Machine-specific settings
 [ -e "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
