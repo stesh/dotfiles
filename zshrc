@@ -87,7 +87,7 @@ case $(uname) in
         if [ -x '/opt/local/libexec/gnubin/ls' ]; then
             alias ls='/opt/local/libexec/gnubin/ls --color -F'
         else
-            alias ls ='/bin/ls -FG'
+            alias ls='/bin/ls -FG'
         fi
     ;;
 
