@@ -81,6 +81,10 @@ case $(uname) in
         [ -d '/opt/local' ] && export PATH="/opt/local/bin:$PATH"
 
     	alias Vim='mvim' # MacVim
+        
+        alias fr='say -v julie'
+        alias en='say -v tom'
+
         local hostname=$(hostname)
 
         # Use GNU ls instead of BSD ls, if it's installed

@@ -1,6 +1,6 @@
 [user]
 	name = Stephen Shaw
-    email = stephen.shaw@fieldaware.com
+    email = "stesh@netsoc.tcd.ie"
 
 [merge]
     tool = vimdiff
