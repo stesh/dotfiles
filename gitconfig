@@ -1,8 +1,8 @@
 [user]
 	name = Stephen Shaw
-    email = "stesh@netsoc.tcd.ie"
+	email = "stesh@stesh.org"
 
 [merge]
-    tool = vimdiff
+	tool = vimdiff
 [color]
 	ui = true
