@@ -1,0 +1,17 @@
+#!/bin/bash
+
+sudo dnf --assumeyes install google-chrome-stable --enablerepo=google-chrome
+sudo dnf --assumeyes install \
+	ykpers \
+	zsh \
+	libyubikey \
+	gnupg \
+	gnupg2-smime \
+	pcsc-lite \
+	pcsc-lite-ccid \
+	yubioath-desktop
+
+
+pushd $HOME
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+popd
