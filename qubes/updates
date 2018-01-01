@@ -1,0 +1,8 @@
+#!/bin/bash
+
+sudo qubes-dom0-update
+for qube in debian-8 spotify whonix-gw whonix-ws; do
+	qvm-run --pass-io --user=root $qube 'apt -y upgrade && shutdown -h now'
+done
+
+qvm-run --pass-io --user=root fedora-25 'dnf -y upgrade && shutdown -h now'
