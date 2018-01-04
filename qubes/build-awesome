@@ -1,0 +1,14 @@
+#!/bin/bash
+
+DEST="$HOME/src"
+cd $DEST
+git clone https://github.com/QubesOS/qubes-desktop-linux-awesome
+
+cd qubes-desktop-linux-awesome
+
+sudo dnf --assumeyes install @development-tools fedora-packager rpmdevtools
+sudo dnf --assumeyes builddep awesome.spec
+
+spectool -g awesome.spec
+make verify-sources
+make rpms
